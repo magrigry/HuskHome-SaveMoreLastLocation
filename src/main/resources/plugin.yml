@@ -1,0 +1,6 @@
+name: HuskHome-SaveMoreLastLocation
+version: ${project.version}
+main: fr.historya.huskhomesavemorelastlocation.HuskHomeSaveMoreLastLocation
+api-version: 1.17
+depend:
+  - HuskHomes

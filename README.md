@@ -9,4 +9,4 @@ Download in the release TAB
 
 # Notes
 
-Tested with HuskHome 2.11. Since this plugin use internal HuskHome code (see issue [here](https://github.com/WiIIiam278/HuskHomes2/issues/155)) this plugin may break on future version. 
+Tested with HuskHome 2.11. Since this plugin use internal HuskHome code this plugin may break on future version. 

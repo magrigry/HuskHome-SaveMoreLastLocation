@@ -36,15 +36,18 @@ public class HandlePlayerTeleportation implements Listener {
 
             // Cancel last position saving if last position is the current position
             try (Connection connection = HuskHomes.getConnection()) {
-                TeleportationPoint teleportationPoint = DataManager.getPlayerLastPosition(event.getPlayer(), connection);
-                if (
-                        player.getLocation().getBlockX() == teleportationPoint.getLocation().getBlockX()
-                                && playerLocation.getBlockY() == teleportationPoint.getLocation().getBlockY()
-                                && playerLocation.getBlockZ() == teleportationPoint.getLocation().getBlockZ()
-                                && playerLocation.getWorld() == teleportationPoint.getLocation().getWorld()
-                ) {
-                    return;
-                }
+
+                try {
+                    TeleportationPoint teleportationPoint = DataManager.getPlayerLastPosition(event.getPlayer(), connection);
+                    if (
+                            player.getLocation().getBlockX() == teleportationPoint.getLocation().getBlockX()
+                                    && playerLocation.getBlockY() == teleportationPoint.getLocation().getBlockY()
+                                    && playerLocation.getBlockZ() == teleportationPoint.getLocation().getBlockZ()
+                                    && playerLocation.getWorld() == teleportationPoint.getLocation().getWorld()
+                    ) {
+                        return;
+                    }
+                } catch (Throwable ignored) {}
 
                 Bukkit.getLogger().log(Level.INFO, "Saving " + player.getName() + " last location. Cause : " + event.getCause());
                 DataManager.setPlayerLastPosition(player, new TeleportationPoint(playerLocation, HuskHomes.getSettings().getServerID()), connection);

@@ -1,6 +1,6 @@
 # HuskHome-SaveMoreLastLocation
 
-This plugin is a simple addon for [HuskHome](https://github.com/WiIIiam278/HuskHomes2) that save players last location in
+This plugin is a simple addon for [HuskHomes](https://github.com/WiIIiam278/HuskHomes2) that save players last location in
 the same way EssentialsX does, to make the `/back` command working is the same way. 
 
 # Download
